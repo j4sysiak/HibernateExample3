@@ -12,18 +12,17 @@ public class MainClass {
 		SessionFactory sessionFactory = configuration.buildSessionFactory();
 		Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-		
         
-        Employee user = new Employee();
-        user.setId(103);
-		user.setUsername("dddddddd");
-		user.setPassword("dddddddddddddd");
-
-		session.persist(user);
+        Employee employee = new Employee();
+        //user.setId(105);
+        employee.setUsername("dddddddd");
+        employee.setPassword("dddddddddddddd");
+        employee.setEmail("ioii@wwwe.pl");
+		session.persist(employee);
+		
 		transaction.commit();
 		session.close();
-
-		sessionFactory.close();
+		//sessionFactory.close();
 
 	}
 
